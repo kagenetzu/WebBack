@@ -1,0 +1,43 @@
+{% from "/macros/btn.twig" import btn as btn %}
+ {% extends "__layout.twig" %}
+
+ {% block content %}
+  
+ <div class="d-flex flex-wrap justify-content-center" >
+    {% for object in team_f %}
+    <div class="d-flex flex-column justify-content-center" style="border: 1px solid gray; padding:5px; margin:5px;">
+      <div>
+        <img src={{ object.image }} style="object-fit:contain; width: 300px; height: 300px; border: 1px solid gray; padding: 4px; margin-top: 5px;" class="nav-link">
+      </div>
+      <div class="d-flex" m>
+        {{ btn(object.name, "", true) }}
+      </div>
+      <div class="d-flex">
+        {{ btn("Картинка", "", false) }}
+        {{ btn("Описание", "", false) }}
+      </div>
+
+      
+      
+    </div>
+  
+  {% endfor %}
+</div>
+  <!-- <pre>
+  {{ dump(team_f) }}
+  </pre> -->
+
+  <!-- <ul class="list-group" style="margin-top: 25px; margin-left:305px">
+      {% for item in menu %}
+        {% if loop.index0 != 0 %}
+            <li class="list-group-item">
+              {{ btn(item.title, item.url, true) }}
+              {{ btn("Картинка", item.url~"/image", false) }}
+              {{ btn("Описание", item.url~"/info", false) }}
+              
+            </li>
+        {% endif %}
+      {% endfor %}
+    </ul>  -->
+
+{% endblock %}
