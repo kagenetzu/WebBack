@@ -1,15 +1,13 @@
 <?php
-require_once "SniperController.php";
+require_once "ObjectController.php";
 
-class SniperImageController extends SniperController{
+class ImageController extends ObjectController {
     public $template = "base_image.twig";
-
-
+    
     public function getContext(): array
     {
-        $context = parent::getContext();
+        $context = parent::getContext(); 
         $context['is_image'] = true;
-        
 
         return $context;
     }

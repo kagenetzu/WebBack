@@ -4,18 +4,18 @@
 
 {% block content %}
     
-{# <div style="border: 1px solid gray; padding:5px; margin:5px;">
-    {{team_f.description}}
-</div> #}
+<div class=" d-inline-flex " style="border: 1px solid gray; padding:5px; margin-left:25px;">
+    {{description}}
+</div> 
 
-    <div style="margin-left: 305px;">
+    <div style="margin-left: 25px;">
             <ul class="nav nav-pills" style="margin-top: 25px;">
                 
-                <li class="nav-item d-flex flex-row">
+                <li class=" d-flex flex-row">
                     
 
-                    {{ btn("Картинка", url~"/image", is_image) }}
-                     {{ btn("Описание", url~"/info", is_info) }}
+                    {{ btn("Картинка", "/heroes_tf/"~id~"/image", is_image) }}
+                     {{ btn("Описание", "/heroes_tf/"~id~"/info", is_info) }}
                 </li>
             </ul>
         

@@ -1,8 +1,8 @@
 <?php
-require_once "SpyController.php";
+require_once "ObjectController.php";
 
-class SpyInfoController extends SpyController {
-    public $template = "spyInfo.twig";
+class InfoController extends ObjectController {
+    public $template = "Info.twig";
     
     public function getContext(): array
     {
