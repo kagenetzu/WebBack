@@ -1,6 +1,6 @@
 <?php
-
-class ObjectController extends TwigBaseController {
+require_once "BaseClassTwigController.php";
+class ObjectController extends BaseClassTwigController {
     public $template = "__object.twig"; // указываем шаблон
     public $title = "";
 
@@ -13,13 +13,18 @@ class ObjectController extends TwigBaseController {
         
         // стягиваем одну строчку из базы
         $query->bindValue("my_id", $this->params['id']);
+
+        
+
         $query->execute();
         $data = $query->fetch();
     
         $context['description'] = $data['description'];
         $context['id'] = $data['id'];
-        $context['info'] = $data['info'];
-        $context['image'] = $data['image'];
+         $context['info'] = $data['info'];
+         $context['image'] = $data['image'];
+
+        
 
         return $context;
     }

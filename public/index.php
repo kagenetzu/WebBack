@@ -29,3 +29,4 @@ $router->add("/heroes_tf/(?P<id>\d+)/info", InfoController::class);
 $router->get_or_default(Controller404::class);
 
 
+
