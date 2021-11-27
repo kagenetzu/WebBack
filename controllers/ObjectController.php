@@ -11,7 +11,7 @@ class ObjectController extends BaseClassTwigController {
                 return "base_image.twig";                
             }
             if(($_GET['show'])=="info"){
-                return "Info.twig";
+                return "base_info.twig";
             }
         }else{
             return parent::getTemplate();
