@@ -29,7 +29,6 @@ class SearchController extends BaseClassTwigController{
                 WHERE (:name = '' OR name like CONCAT('%', :name, '%'))
                 AND (type = :type)
                 AND (:info = '' OR info like CONCAT('%', :info, '%'))
-                
                 EOL;
             }
         

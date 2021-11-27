@@ -70,6 +70,6 @@ class Router {
         }
 
         // вызываем
-        return $controllerInstance->get();
+        return  $controllerInstance->process_response();
     }
 }

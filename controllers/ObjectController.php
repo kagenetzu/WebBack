@@ -4,19 +4,7 @@ class ObjectController extends BaseClassTwigController {
     public $template = "__object.twig"; // указываем шаблон
     public $title = "";
 
-    public function getTemplate()
-    {
-        if (isset($_GET['show'])){
-            if(($_GET['show'])=="image"){
-                return "base_image.twig";                
-            }
-            if(($_GET['show'])=="info"){
-                return "base_info.twig";
-            }
-        }else{
-            return parent::getTemplate();
-        }
-    }
+    
     public function getContext(): array
     {
         $context = parent::getContext();
