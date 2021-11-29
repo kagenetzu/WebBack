@@ -23,8 +23,9 @@
         <div class="col-4">
             <label class="form-label">Тип</label>
             <select class="form-control" name="type">
-                <option value="атака">Атака</option>
-                <option value="поддержка">Поддержка</option>
+                {% for type in new_types %}
+                    <option value="{{ type.title|title }}">{{ type.title|title }}</option>
+                {% endfor %}
             </select>
         </div>
         <div class="mb-3">

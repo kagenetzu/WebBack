@@ -28,11 +28,11 @@
             <li class="nav-item">
                 <a class="nav-link " aria-current="page" href="/">Главная</a>
             </li>
-            {% for type in types %}
+            {% for type in new_types %}
                 <li class="nav-item">
                     <!-- type.type  выдает тип, 
                            а добавление |title делает первую букву с слова большой  -->
-                    <a class="nav-link" href="/?type={{ type.type }}">{{ type.type|title }} </a>
+                    <a class="nav-link" href="/?type={{ type.title }}">{{ type.title|title }} </a>
                 </li>
             {% endfor %}
             <li class="nav-item">
@@ -40,6 +40,9 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="/create">Добавление</a>
+            </li>
+            <li>
+                <a class="nav-link " aria-current = "page" href="/create_type">Типы</a>
             </li>
         </ul>
         </div>
