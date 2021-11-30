@@ -5,7 +5,22 @@
   
  <div class="d-flex flex-wrap justify-content-center" >
     {% for object in team_f %}
-    <div class="d-flex flex-column justify-content-center" style="border: 1px solid gray; padding:5px; margin:5px;">
+    <div class="d-flex flex-column justify-content-center position-relative" style="border: 1px solid gray; padding:5px; margin:5px;">
+      <div class="position-absolute" style="right:10px; top:15px;">
+        <form action="/heroes_tf/{{object.id}}/delete" method="POST">
+          <button type="submit" class="btn btn-danger">
+            <i class="fa fa-times"></i>
+          </button>
+        </form>
+      </div>
+      <div class = "position-absolute" style = "right: 50px; top: 15px;">
+        <form action = "/heroes_tf/{{object.id}}/update">
+            <input type = "hidden" name = "id" value="{{object.id}}">
+            <button type = "submit" class="btn btn-info">   
+                <i class="fas fa-edit"></i>
+            </button>
+        </form>
+    </div>
       <div>
         <img src={{ object.image }} style="object-fit:contain; width: 300px; height: 300px; border: 1px solid gray; padding: 4px; margin-top: 5px;" class="nav-link">
       </div>

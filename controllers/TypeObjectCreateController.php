@@ -4,6 +4,7 @@ require_once "BaseClassTwigController.php";
 
 class TypeObjectCreateController extends BaseClassTwigController {
     public $template = "type_create.twig";
+    public $title = "Добавление";
 
     public function getContext(): array
     {

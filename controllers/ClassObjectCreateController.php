@@ -3,6 +3,7 @@ require_once "BaseClassTwigController.php";
 
 class ClassObjectCreateController extends BaseClassTwigController {
     public $template = "object_create.twig";
+    public $title = "Добавление";
 
     public function get(array $context) // добавили параметр
     {

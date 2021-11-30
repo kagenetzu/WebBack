@@ -1,0 +1,45 @@
+{% extends "__layout.twig" %}
+
+{% block content %}
+
+    <h1 style="margin-left: 25px;">Редактирование</h1>
+    <hr>
+
+    {% if message %}
+        <div class="alert alert-info">
+            {{message}}
+            <a href="/heroes_tf/{{id}}">открыть новый объект</a>
+        </div>
+    {% endif %}
+
+    <form action="" enctype="multipart/form-data" method="POST" class="row g-3" style="margin-left: 25px; width:60%;" >
+        <input type = "hidden" name = "id" value="{{object.id}}">
+        <div class="col-4">
+            <label class="form-label">Имя</label>
+            <input type="text" class="form-control" name="title" value="{{object.title}}">
+        </div>
+        <div class="col-4">
+            <label class="form-label">Краткое описание</label>
+            <input type="text" class="form-control" name="description" value="{{object.dscrpt}}">
+        </div>
+        <div class="col-4">
+            <label class="form-label">Тип</label>
+            <select class="form-control" name="type">
+                {% for type in new_types %}
+                    <option value="{{ type.title|title }}">{{ type.title|title }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="formFileMultiple" class="form-label">Картинка</label>
+            <input class="form-control" type="file" id="formFileMultiple" name = "image" multiple>
+        </div>
+        <div class="col-12">
+            <textarea name="info" placeholder="Полное описание..." class="form-control" rows="5">{{object.info}}</textarea>
+        </div>
+        <div class="col-12 text-end">
+            <button type="submit" class="btn btn-primary">Редактировать</button>
+        </div>
+    </form>
+
+{% endblock %}
