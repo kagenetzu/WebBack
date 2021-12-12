@@ -8,7 +8,7 @@ class ClassObjectCreateController extends BaseClassTwigController {
     public function get(array $context) // добавили параметр
     {
         //echo $_SERVER['REQUEST_METHOD'];
-        
+        $context['viewed_pages'] = array_reverse($_SESSION['viewed_pages']);
         parent::get($context); // пробросили параметр
     }
 

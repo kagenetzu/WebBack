@@ -18,6 +18,15 @@ class TwigBaseController extends BaseController {
         $context['title'] = $this->title; // добавляем title в контекст
         $context['url'] = $this->url;
 
+        
+
+        $viewed_pages = $_SESSION['viewed_pages'];
+        if (!isset($viewed_pages)) {
+            $viewed_pages = [];
+        }
+        array_push($viewed_pages, $_SERVER['REQUEST_URI']);
+        $_SESSION['viewed_pages'] = array_slice($viewed_pages, -10);
+
         return $context;
     }
     

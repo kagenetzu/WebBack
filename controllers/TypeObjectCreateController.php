@@ -11,6 +11,7 @@ class TypeObjectCreateController extends BaseClassTwigController {
         $context = parent::getContext();
         $query = $this->pdo->query("SELECT * FROM types");
         $context['new_types'] = $query->fetchAll();
+        $context['viewed_pages'] = array_reverse($_SESSION['viewed_pages']);
         return $context;
     }
 

@@ -20,6 +20,8 @@ class MainController extends BaseClassTwigController {
         }
         
         $context['team_f'] = $query->fetchAll();
+        $context['viewed_pages'] = array_reverse($_SESSION['viewed_pages']);
+        
 
         return $context;
     }

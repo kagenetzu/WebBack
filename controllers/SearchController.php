@@ -42,6 +42,7 @@ class SearchController extends BaseClassTwigController{
 
             $context['objects'] = $query->fetchAll();
         }
+        $context['viewed_pages'] = array_reverse($_SESSION['viewed_pages']);
 
         return $context;
     }

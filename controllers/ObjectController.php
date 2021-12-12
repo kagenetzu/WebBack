@@ -20,6 +20,7 @@ class ObjectController extends BaseClassTwigController {
         $context['description'] = $data['description'];
         $context['id'] = $data['id'];
 
+
         if (isset($_GET['show'])){
             if(($_GET['show'])=="image"){
                 $context['is_image'] = true;
@@ -31,7 +32,7 @@ class ObjectController extends BaseClassTwigController {
                 $context['info'] = $data['info'];
             }
         }
-
+        $context['viewed_pages'] = array_reverse($_SESSION['viewed_pages']);
 
         
 

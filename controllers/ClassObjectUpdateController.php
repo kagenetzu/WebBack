@@ -8,6 +8,7 @@ class ClassObjectUpdateController extends BaseClassTwigController {
     public function getContext(): array
     {
         $context = parent::getContext();
+        $context['viewed_pages'] = array_reverse($_SESSION['viewed_pages']);
         return $context;
     }
 

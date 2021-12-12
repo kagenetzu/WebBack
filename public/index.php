@@ -11,7 +11,9 @@ require_once "../controllers/TypeObjectCreateController.php";
 require_once "../controllers/ClassObjectDeleteController.php";
 require_once "../controllers/ClassObjectUpdateController.php";
 
+
 require_once "../middlewares/LoginRequiredMiddleware.php";
+
 
 
 
@@ -41,7 +43,6 @@ $router->add("/heroes_tf/(?P<id>\d+)/delete", ClassObjectDeleteController::class
         ->middleware(new LoginRequiredMiddleware());
 $router->add("/heroes_tf/(?P<id>\d+)/update", ClassObjectUpdateController::class)
         ->middleware(new LoginRequiredMiddleware());
-
 
 
 $router->get_or_default(Controller404::class);
